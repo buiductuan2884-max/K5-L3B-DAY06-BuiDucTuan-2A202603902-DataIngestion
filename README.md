@@ -1,47 +1,72 @@
 # Day 06 · Data Ingestion Engineering
 
-**Lab cá nhân** · **4 giờ** · **Dữ liệu tự chọn**
+Kho tri thức truy xuất xây từ sách OpenStax *Principles of Economics 2e* (chương 3 đến 5, 70 trang nội dung, CC BY 4.0). Ba chiến lược dữ liệu được so sánh trên cùng corpus, cùng embedding model và cùng bộ 40 câu hỏi.
 
-Biến tài liệu thành kho tri thức có thể truy xuất cho AI agent, rồi đo xem cách chuẩn bị dữ liệu nào hiệu quả nhất.
+Đề bài gốc: [VinUni-AI20k/K5-L3-Day06-DataIngestionEngineering](https://github.com/VinUni-AI20k/K5-L3-Day06-DataIngestionEngineering) (xem `GUIDE.md`, `BENCHMARK.md`, `RUBRIC.md`).
 
-| 📄 Dữ liệu | 🧩 Chiến lược | 🎯 Benchmark |
-|---|---|---|
-| Tối thiểu **30 trang nội dung** | Tối thiểu **3 cấu hình** | Tối thiểu **20 câu hỏi** |
-
-## Bắt đầu nhanh
-
-Dùng [starter PostgreSQL + pgvector](starter/README.md) để dựng database và hoàn thiện các hàm TODO, hoặc tự chọn vector store tương đương. Starter chỉ là khung: **bạn tự hiện thực pipeline và benchmark**.
-
-## 1. Xây pipeline
-
-![Đọc tài liệu, chuẩn hóa, chia chunk, tạo vector, lưu và kiểm tra](assets/ingestion-pipeline.svg)
-
-Chọn tài liệu được phép sử dụng; giữ **ID tài liệu, nguồn, trang/vị trí** và metadata phù hợp. Dùng embedding model thật qua API hoặc chạy local; lưu và truy xuất bằng pgvector, Qdrant, Chroma hoặc một store tương đương.
-
-## 2. So sánh và đánh giá
-
-![Ba chiến lược được đánh giá trên cùng corpus và benchmark dev/test](assets/benchmark-workflow.svg)
-
-Dùng cùng dữ liệu, model và câu hỏi cho cả ba cấu hình. Tách **15 câu dev / 5 câu test** trước khi chạy; chọn cấu hình trên dev, rồi đánh giá test sau khi cố định. Mỗi câu hỏi cần có đoạn bằng chứng và trang nguồn; thiết kế bộ câu hỏi và đánh giá theo [BENCHMARK.md](BENCHMARK.md).
-
-Đánh giá theo năm khía cạnh: **độ chính xác truy xuất**, **tính mạch lạc của chunk**, **tính hữu dụng của metadata**, **chất lượng grounding** và **tác động của chiến lược dữ liệu**. Giải thích lựa chọn bằng kết quả, ví dụ lỗi và các đánh đổi.
-
-## 3. Chuẩn bị bài nộp
-
-1. Chạy pipeline và lưu cấu hình, kết quả top-3, trace cùng nhãn đánh giá thủ công.
-2. Điền [thông tin học viên](STUDENT.md), [nhật ký thí nghiệm](artifacts/experiment_log.csv) và bản sao [mẫu báo cáo cá nhân](report/individual/MSSV_HoTen.md).
-3. Kiểm tra mã nguồn, cách chạy, manifest dữ liệu và checklist trong [SUBMISSION.md](SUBMISSION.md).
-
-## Tài liệu hướng dẫn
-
-| Bạn cần tìm | Tài liệu |
+| Thành phần | Lựa chọn |
 |---|---|
-| Setup baseline PostgreSQL + pgvector | [starter/README.md](starter/README.md) |
-| Các bước làm và cách tính chỉ số | [GUIDE.md](GUIDE.md) |
-| Tiến độ trong 4 giờ | [CHECKPOINTS.md](CHECKPOINTS.md) |
-| Năm tiêu chí benchmark và bộ câu hỏi | [BENCHMARK.md](BENCHMARK.md) |
-| Tiêu chí chấm điểm | [RUBRIC.md](RUBRIC.md) |
-| Quy tắc sử dụng dữ liệu, AI và API | [RULES.md](RULES.md) |
-| Cách nộp bài | [SUBMISSION.md](SUBMISSION.md) |
+| Đọc PDF | PyMuPDF 2.1 (text block ≈ đoạn văn), chuẩn hóa NFKC, bỏ header/footer |
+| Embedding | OpenAI `text-embedding-3-small`, 1536 chiều, cùng model cho query và document |
+| Vector store | Chroma 1.5.9 `PersistentClient` tại `starter/chroma_db`, cosine, HNSW (approximate) |
+| Trường lọc | `chapter` (3, 4, 5) |
 
-[data/format-example.json](data/format-example.json) chỉ minh họa định dạng, không phải corpus đủ điều kiện. Phần xử lý và benchmark do bạn tự hiện thực; không bắt buộc xây chatbot.
+## Ba cấu hình
+
+| | Chunk | Truy xuất |
+|---|---|---|
+| A | Cố định 500 ký tự, overlap 50, trong từng trang | Không lọc |
+| B | Theo đoạn/mục, tối đa 1000 ký tự, có thể qua trang | Không lọc |
+| C | Giống B (cùng collection) | Lọc `chapter` khi câu hỏi có filter |
+
+## Cấu trúc
+
+```text
+data/manifest.json            nguồn, giấy phép, trang được tính
+benchmark/questions.json      40 câu (29 dev / 11 test), gold page + evidence
+artifacts/experiment_log.csv  cấu hình và kết quả A/B/C
+starter/src/                  ingestion, chunking, embeddings, store, evaluation, run
+starter/results/              chunk, trace top-3, metrics, filter compliance, bảng chấm tay (audit/)
+starter/chroma_db/            vector store đã nạp (để chạy demo không cần nạp lại)
+starter/app.py                demo Streamlit
+report/individual/            báo cáo cá nhân
+```
+
+## Cài đặt
+
+Python 3.11 đến 3.13. Chạy từ thư mục `starter/`:
+
+```bash
+python -m venv .venv
+.venv/Scripts/activate          # macOS/Linux: source .venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env            # điền OPENAI_API_KEY
+```
+
+Tải PDF về `starter/data/Economics2e.pdf` từ URL trong `data/manifest.json` (chỉ cần khi chạy lại ingest).
+
+## Chạy pipeline
+
+```bash
+python -m src.run verify-benchmark   # kiểm evidence nằm đúng trang gold, không gọi API
+python -m src.run ingest             # chunk A/B, embed, upsert Chroma; chạy lần 2 để kiểm không trùng
+python -m src.run evaluate           # top-3 cho A/B/C, ghi trace và metrics
+python -m src.run audit-sheets       # tạo bảng chấm tay coherence / grounding / metadata
+python scripts/cache_query_vectors.py  # lưu vector câu hỏi benchmark cho demo
+```
+
+Chi phí embedding mỗi lần ingest khoảng 84k token (< $0.002). Thời gian và token từng lần chạy ghi trong `starter/results/ingest_report.json`.
+
+## Demo
+
+```bash
+streamlit run app.py
+```
+
+App có bốn tab. Kho tri thức cho xem nguồn, thống kê chunk, từng trang và các chunk của trang đó. Hỏi thử đặt top-3 của A, B, C cạnh nhau và cho lọc theo chương. Benchmark hiện metrics và trace từng câu. Trả lời (LLM) dùng `gpt-4o-mini` trả lời từ top-3 có trích trang, kèm tùy chọn dịch câu hỏi sang tiếng Anh trước khi tìm.
+
+Deploy Streamlit Community Cloud: main file `starter/app.py`, thêm `OPENAI_API_KEY` trong Secrets.
+
+## Ghi nguồn
+
+Nội dung corpus: OpenStax, *Principles of Economics 2e*, Rice University, 2017, CC BY 4.0, https://openstax.org/details/books/principles-economics-2e. Văn bản được trích xuất và chuẩn hóa để thử nghiệm truy xuất.

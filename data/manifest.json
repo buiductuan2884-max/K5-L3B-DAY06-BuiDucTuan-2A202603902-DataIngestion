@@ -1,0 +1,32 @@
+{
+  "corpus": "OpenStax Principles of Economics 2e, chapters 3-5",
+  "page_counting_rule": "Count only chapter body pages (chapter opener through last body page). Exclude front matter, Key Terms, Key Concepts and Summary, Self-Check/Review/Critical Thinking questions and Problems. Page numbers are 1-based physical PDF pages, not printed book page numbers (printed = PDF - 10).",
+  "sources": [
+    {
+      "source_id": "openstax-econ2e",
+      "title": "Principles of Economics 2e (OpenStax, Rice University, 2017)",
+      "source_path_or_url": "https://assets.openstax.org/oscms-prodcms/media/documents/Economics2e-OP_s2jF42u.pdf",
+      "book_page": "https://openstax.org/details/books/principles-economics-2e",
+      "local_path": "starter/data/Economics2e.pdf (not committed; download from the URL above)",
+      "license_or_permission": "Creative Commons Attribution 4.0 International (CC BY 4.0), as listed by the OpenStax CMS API. Attribution: OpenStax, Principles of Economics 2e. Modifications: text extracted and normalized for retrieval experiments only.",
+      "accessed_at": "2026-11-14",
+      "snapshot": "PDF file size 51,763,377 bytes, 974 physical pages; footer cites cnx.org/content/col12122/1.4",
+      "physical_pages_total": 974,
+      "counted_pages": {
+        "chapter_3_demand_and_supply": [55, 84],
+        "chapter_4_labor_and_financial_markets": [93, 112],
+        "chapter_5_elasticity": [117, 136]
+      },
+      "counted_page_total": 70,
+      "short_pages_note": "Pages 112 (148 chars) and 136 (315 chars) are short end-of-chapter pages; 68 pages remain even if they are excluded.",
+      "char_counts": "Per-page normalized character counts are in starter/results/pages_normalized.json (regenerate with `python -m src.run ingest`). Total normalized characters: 192,103."
+    }
+  ],
+  "filter_field": {
+    "name": "chapter",
+    "type": "int",
+    "values": [3, 4, 5],
+    "value_source": "Chapter number printed in the PDF chapter opener and in every page footer ('Chapter N | Title').",
+    "why": "Core terms (demand, supply, price ceiling, equilibrium, surplus) appear in all three chapters with different meanings/examples (goods vs labor vs financial markets vs elasticity)."
+  }
+}

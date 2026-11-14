@@ -1,4 +1,4 @@
 strategy,chunking,chunk_size,overlap,metadata,filter,vectorizer,hypothesis,dev_hit1,dev_hit3,test_hit1,test_hit3,notes
-A,,,,,,,,,,,,
-B,,,,,,,,,,,,
-C,,,,,,,,,,,,
+A,fixed-size chars per page,500,50,document_id;source;page;page_end;chapter;chapter_title;section;char_start,none,openai text-embedding-3-small (1536d) + Chroma 1.5.9 cosine,,11/29,12/29,8/11,9/11,449 chunks; 13 dev questions with gold page in top-3 but evidence split across chunks
+B,paragraph/section packed (crosses pages),max 1000,0,document_id;source;page;page_end;chapter;chapter_title;section,none,openai text-embedding-3-small (1536d) + Chroma 1.5.9 cosine,,16/29,20/29,6/11,9/11,260 chunks
+C,same as B,max 1000,0,same as B,where chapter=<given> only for questions with filter (7/40),openai text-embedding-3-small (1536d) + Chroma 1.5.9 cosine,,16/29,20/29,6/11,10/11,same collection as B; only difference vs B is the filter

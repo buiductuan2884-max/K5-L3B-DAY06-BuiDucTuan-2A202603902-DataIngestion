@@ -1,0 +1,543 @@
+[
+ {
+  "id": "q01",
+  "split": "dev",
+  "type": "direct",
+  "question": "What is consumer surplus?",
+  "expected_answer": "The amount individuals would have been willing to pay minus the amount they actually paid.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   81
+  ],
+  "evidence_quote": "The amount that individuals would have been willing to pay, minus the amount that they actually paid, is called consumer surplus.",
+  "filter": null
+ },
+ {
+  "id": "q02",
+  "split": "dev",
+  "type": "direct",
+  "question": "What does the Latin phrase ceteris paribus mean in economics?",
+  "expected_answer": "Other things being equal.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   62
+  ],
+  "evidence_quote": "Economists call this assumption ceteris paribus, a Latin phrase meaning \"other things being equal.\"",
+  "filter": null
+ },
+ {
+  "id": "q03",
+  "split": "dev",
+  "type": "condition",
+  "question": "What happens in a goods market when the price is set below the equilibrium level?",
+  "expected_answer": "There is excess demand (a shortage): quantity demanded exceeds quantity supplied.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   61
+  ],
+  "evidence_quote": "When the price is below equilibrium, there is excess demand, or a shortage",
+  "filter": null
+ },
+ {
+  "id": "q04",
+  "split": "dev",
+  "type": "direct",
+  "question": "What is a price ceiling?",
+  "expected_answer": "A legal maximum price that one pays for some good or service.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   78
+  ],
+  "evidence_quote": "A price ceiling is a legal maximum price that one pays for some good or service.",
+  "filter": null
+ },
+ {
+  "id": "q05",
+  "split": "dev",
+  "type": "direct",
+  "question": "What was the U.S. federal minimum wage in 2016?",
+  "expected_answer": "$7.25 per hour.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   80
+  ],
+  "evidence_quote": "The federal minimum wage in 2016 was $7.25 per hour",
+  "filter": null
+ },
+ {
+  "id": "q06",
+  "split": "dev",
+  "type": "paraphrase",
+  "question": "What is the name for the reduction in total surplus when an economy produces an inefficient amount?",
+  "expected_answer": "Deadweight loss.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   82
+  ],
+  "evidence_quote": "The loss in social surplus that occurs when the economy produces at an inefficient quantity is called deadweight loss.",
+  "filter": null
+ },
+ {
+  "id": "q07",
+  "split": "dev",
+  "type": "direct",
+  "question": "When does a government subsidy occur?",
+  "expected_answer": "When the government pays a firm directly or reduces the firm's taxes if the firm carries out certain actions.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   69
+  ],
+  "evidence_quote": "A subsidy occurs when the government pays a firm directly or reduces the firm's taxes if the firm carries out certain actions.",
+  "filter": null
+ },
+ {
+  "id": "q08",
+  "split": "dev",
+  "type": "paraphrase",
+  "question": "Why do economists say that hiring workers is a derived demand?",
+  "expected_answer": "Because the demand for labor is based on the demand for the good or service that the workers produce.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   96
+  ],
+  "evidence_quote": "One key reason is that the demand for labor is based on the demand for the good or service that is produced.",
+  "filter": null
+ },
+ {
+  "id": "q09",
+  "split": "dev",
+  "type": "direct",
+  "question": "In the Minneapolis-St. Paul-Bloomington nursing example, what are the equilibrium salary and quantity of nurses?",
+  "expected_answer": "$70,000 and 34,000 nurses.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   95
+  ],
+  "evidence_quote": "The equilibrium salary is $70,000 and the equilibrium quantity is 34,000 nurses.",
+  "filter": null
+ },
+ {
+  "id": "q10",
+  "split": "dev",
+  "type": "exception",
+  "question": "Why are price ceilings rare in labor markets?",
+  "expected_answer": "Because rules that prevent people from earning income are not politically popular.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   100
+  ],
+  "evidence_quote": "price ceilings are rare in labor markets, because rules that prevent people from earning income are not politically popular.",
+  "filter": null
+ },
+ {
+  "id": "q11",
+  "split": "dev",
+  "type": "direct",
+  "question": "What do usury laws do?",
+  "expected_answer": "They impose an upper limit on the interest rate that lenders can charge.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   108
+  ],
+  "evidence_quote": "Many states do have usury laws, which impose an upper limit on the interest rate that lenders can charge.",
+  "filter": null
+ },
+ {
+  "id": "q12",
+  "split": "dev",
+  "type": "direct",
+  "question": "How is the price elasticity of demand calculated?",
+  "expected_answer": "Percentage change in quantity demanded divided by the percentage change in price.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   118
+  ],
+  "evidence_quote": "The price elasticity of demand is the percentage change in the quantity demanded of a good or service divided by the percentage change in the price.",
+  "filter": null
+ },
+ {
+  "id": "q13",
+  "split": "dev",
+  "type": "paraphrase",
+  "question": "What term describes how the burden of a tax is split between buyers and sellers?",
+  "expected_answer": "Tax incidence.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   130
+  ],
+  "evidence_quote": "The analysis, or manner, of how a tax burden is divided between consumers and producers is called tax incidence.",
+  "filter": null
+ },
+ {
+  "id": "q14",
+  "split": "dev",
+  "type": "metadata_filter",
+  "question": "What plays the role of the price in this market?",
+  "filter_context": "User is studying the financial-markets part of Chapter 4 (filter given before retrieval).",
+  "expected_answer": "The interest rate.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   107
+  ],
+  "evidence_quote": "the vertical axis shows the interest rate (which is the price in the financial market).",
+  "filter": {
+   "chapter": 4
+  }
+ },
+ {
+  "id": "q15",
+  "split": "dev",
+  "type": "metadata_filter",
+  "question": "Give an example of a price ceiling.",
+  "filter_context": "User is reading Chapter 3 (goods markets); filter given before retrieval.",
+  "expected_answer": "Rent control laws, which let landlords raise rents only by a certain maximum percentage each year.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   78
+  ],
+  "evidence_quote": "rent control laws, a price ceiling that usually works by stating that landlords can raise rents by only a certain maximum percentage each year.",
+  "filter": {
+   "chapter": 3
+  }
+ },
+ {
+  "id": "t16",
+  "split": "test",
+  "type": "direct",
+  "question": "What is the cross-price elasticity of demand?",
+  "expected_answer": "The percentage change in quantity demanded of good A resulting from a percentage change in the price of good B.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   133
+  ],
+  "evidence_quote": "the cross-price elasticity of demand is the percentage change in the quantity of good A that is demanded as a result of a percentage change in the price of good B.",
+  "filter": null
+ },
+ {
+  "id": "t17",
+  "split": "test",
+  "type": "condition",
+  "question": "According to typical studies, how much does a 10% rise in the minimum wage reduce hiring of unskilled workers?",
+  "expected_answer": "By about 1 to 2%.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   101
+  ],
+  "evidence_quote": "a 10% increase in the minimum wage would decrease the hiring of unskilled workers by 1 to 2%",
+  "filter": null
+ },
+ {
+  "id": "t18",
+  "split": "test",
+  "type": "metadata_filter",
+  "question": "Describe a law that caps a price below its market equilibrium.",
+  "filter_context": "User is studying Chapter 4 (labor and financial markets); filter given before retrieval.",
+  "expected_answer": "A law capping credit card interest rates at Rc, below the equilibrium rate R0.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   107
+  ],
+  "evidence_quote": "Imagine a law imposes a price ceiling that holds the interest rate charged on credit cards at the rate Rc, which lies below the interest rate R0 that would otherwise have prevailed in the market.",
+  "filter": {
+   "chapter": 4
+  }
+ },
+ {
+  "id": "t19",
+  "split": "test",
+  "type": "paraphrase",
+  "question": "What kind of good do people buy more of as their income goes up?",
+  "expected_answer": "A normal good.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   64
+  ],
+  "evidence_quote": "A product whose demand rises when income rises, and vice versa, is called a normal good.",
+  "filter": null
+ },
+ {
+  "id": "t20",
+  "split": "test",
+  "type": "direct",
+  "question": "How much did Netflix raise its streaming subscription price for new U.S. customers in 2014?",
+  "expected_answer": "From $7.99 to $8.99 per month.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   117
+  ],
+  "evidence_quote": "In 2014, Netflix also raised its streaming video subscription price from $7.99 to $8.99 per month for new U.S. customers.",
+  "filter": null
+ },
+ {
+  "id": "q21",
+  "split": "dev",
+  "type": "cross_lingual",
+  "question": "Độ co giãn của cung theo giá được tính như thế nào?",
+  "expected_answer": "Phần trăm thay đổi lượng cung chia cho phần trăm thay đổi giá.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   118
+  ],
+  "evidence_quote": "The price elasticity of supply is the percentage change in quantity supplied divided by the percentage change in price.",
+  "filter": null
+ },
+ {
+  "id": "q22",
+  "split": "dev",
+  "type": "distractor",
+  "question": "What is producer surplus?",
+  "expected_answer": "The amount a seller is paid for a good minus the seller's actual cost.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   82
+  ],
+  "evidence_quote": "The amount that a seller is paid for a good minus the seller's actual cost is called producer surplus.",
+  "filter": null
+ },
+ {
+  "id": "t23",
+  "split": "test",
+  "type": "numeric",
+  "question": "In the nurse labor market example, how many nurses are supplied and demanded at a salary of $75,000?",
+  "expected_answer": "38,000 supplied and 33,000 demanded (a surplus of nurses).",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   95
+  ],
+  "evidence_quote": "At an above-equilibrium salary of $75,000, quantity supplied increases to 38,000, but the quantity of nurses demanded at the higher pay declines to 33,000.",
+  "filter": null
+ },
+ {
+  "id": "q24",
+  "split": "dev",
+  "type": "numeric",
+  "question": "What are the equilibrium interest rate and quantity in the credit card borrowing example?",
+  "expected_answer": "15% and $600 billion.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   104
+  ],
+  "evidence_quote": "At the equilibrium, the interest rate (the \"price\" in this market) is 15% and the quantity of financial capital loaned and borrowed is $600 billion.",
+  "filter": null
+ },
+ {
+  "id": "t25",
+  "split": "test",
+  "type": "exception",
+  "question": "Do state usury laws usually hold interest rates below the market rate?",
+  "expected_answer": "Often not: in many cases the legal upper limits are well above the market interest rate.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   108
+  ],
+  "evidence_quote": "However, in many cases these upper limits are well above the market interest rate.",
+  "filter": null
+ },
+ {
+  "id": "q26",
+  "split": "dev",
+  "type": "trap_misconception",
+  "question": "Is the slope of a demand curve the same as its elasticity?",
+  "expected_answer": "No; confusing slope with elasticity is a common mistake.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   122
+  ],
+  "evidence_quote": "It is a common mistake to confuse the slope of either the supply or demand curve with its elasticity.",
+  "filter": null
+ },
+ {
+  "id": "q27",
+  "split": "dev",
+  "type": "counterintuitive",
+  "question": "Under the rent control example, are more or fewer apartments rented than at the market rent?",
+  "expected_answer": "Fewer: 15,000 units under the ceiling versus 17,000 at the market rent of $600.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   79
+  ],
+  "evidence_quote": "One of the ironies of price ceilings is that while the price ceiling was intended to help renters, there are actually fewer apartments rented out under the price ceiling (15,000 rental units) than would be the case at the market rent of $600 (17,000 rental units).",
+  "filter": null
+ },
+ {
+  "id": "q28",
+  "split": "dev",
+  "type": "lay_language",
+  "question": "My boss is not allowed to pay me less than a certain amount per hour. What is that rule called?",
+  "expected_answer": "The minimum wage, a price floor in the labor market.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   100
+  ],
+  "evidence_quote": "The U.S. government sets a minimum wage, a price floor that makes it illegal for an employer to pay employees less than a certain hourly rate.",
+  "filter": null
+ },
+ {
+  "id": "q29",
+  "split": "dev",
+  "type": "metadata_filter",
+  "question": "What is shown on the vertical axis, and why?",
+  "expected_answer": "The wage, because the wage is the price in the labor market.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   100
+  ],
+  "evidence_quote": "The wage appears on the vertical axis, because the wage is the price in the labor market.",
+  "filter": {
+   "chapter": 4
+  },
+  "filter_context": "User is reading the labor-market section of Chapter 4; filter given before retrieval."
+ },
+ {
+  "id": "t30",
+  "split": "test",
+  "type": "metadata_filter",
+  "question": "How can you tell a good is inferior?",
+  "expected_answer": "When its income elasticity of demand is negative.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   133
+  ],
+  "evidence_quote": "When the income elasticity of demand is negative, we call the good an inferior good.",
+  "filter": {
+   "chapter": 5
+  },
+  "filter_context": "User is studying Chapter 5 (elasticity); filter given before retrieval."
+ },
+ {
+  "id": "q31",
+  "split": "dev",
+  "type": "condition",
+  "question": "If demand for concert tickets is elastic at the current price, should the band raise or cut the price to earn more revenue?",
+  "expected_answer": "Cut the price, because quantity sold rises by a larger percentage than the price drop, raising total revenue.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   127
+  ],
+  "evidence_quote": "If demand is elastic at that price level, then the band should cut the price, because the percentage drop in price will result in an even larger percentage increase in the quantity sold—thus raising total revenue.",
+  "filter": null
+ },
+ {
+  "id": "t32",
+  "split": "test",
+  "type": "condition",
+  "question": "Who bears most of a tax when demand is more inelastic than supply?",
+  "expected_answer": "Consumers (if supply is more inelastic than demand, sellers bear most).",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   130
+  ],
+  "evidence_quote": "If demand is more inelastic than supply, consumers bear most of the tax burden, and if supply is more inelastic than demand, sellers bear most of the tax burden.",
+  "filter": null
+ },
+ {
+  "id": "q33",
+  "split": "dev",
+  "type": "distractor",
+  "question": "How responsive are teenagers' working hours to changes in wages?",
+  "expected_answer": "Fairly elastic: a percentage wage change leads to a larger percentage change in hours worked.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   134
+  ],
+  "evidence_quote": "The wage elasticity of labor supply for teenage workers is generally fairly elastic",
+  "filter": null
+ },
+ {
+  "id": "t34",
+  "split": "test",
+  "type": "cross_lingual_trap",
+  "question": "Khi giá của một hàng hóa thay đổi, đường cầu hoặc đường cung của chính hàng hóa đó có dịch chuyển không?",
+  "expected_answer": "Không; thay đổi giá của chính hàng hóa không bao giờ làm dịch chuyển đường cầu hay đường cung của nó (chỉ di chuyển dọc đường).",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   77
+  ],
+  "evidence_quote": "Remember, a change in the price of a good never causes the demand or supply curve for that good to shift.",
+  "filter": null
+ },
+ {
+  "id": "q35",
+  "split": "dev",
+  "type": "multi_step",
+  "question": "When both supply and demand shift at the same time, can we usually predict the change in both equilibrium price and quantity?",
+  "expected_answer": "Usually only one of them (price or quantity), not both.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   76
+  ],
+  "evidence_quote": "When both curves shift, typically we can determine the overall effect on price or on quantity, but not on both.",
+  "filter": null
+ },
+ {
+  "id": "q36",
+  "split": "dev",
+  "type": "direct",
+  "question": "What does it mean when the minimum wage is nonbinding?",
+  "expected_answer": "The price floor is not determining the market outcome (it is below the market wage).",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   101
+  ],
+  "evidence_quote": "In this situation, the price floor minimum wage is nonbinding —that is, the price floor is not determining the market outcome.",
+  "filter": null
+ },
+ {
+  "id": "q37",
+  "split": "dev",
+  "type": "direct",
+  "question": "What happened during China's Great Leap Forward when food prices were kept artificially low?",
+  "expected_answer": "30 to 40 million people died of starvation because low prices depressed farm production.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   110
+  ],
+  "evidence_quote": "During China's \"Great Leap Forward\" in the late 1950s, the government kept food prices artificially low, with the result that 30 to 40 million people died of starvation because the low prices depressed farm production.",
+  "filter": null
+ },
+ {
+  "id": "q38",
+  "split": "dev",
+  "type": "cross_lingual",
+  "question": "Độ co giãn của cầu cà phê khoảng bao nhiêu?",
+  "expected_answer": "Khoảng 0,3: giá tăng 10% làm lượng tiêu thụ giảm khoảng 3%.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   129
+  ],
+  "evidence_quote": "The elasticity of coffee demand is only about 0.3; that is, a 10% rise in the price of coffee leads to a decline of about 3% in the quantity of coffee consumed.",
+  "filter": null
+ },
+ {
+  "id": "t39",
+  "split": "test",
+  "type": "metadata_filter",
+  "question": "What factors can increase the number of workers available?",
+  "expected_answer": "Immigration, increasing population, an aging population, and changing demographics.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   98
+  ],
+  "evidence_quote": "An increased number of workers can be due to several factors, such as immigration, increasing population, an aging population, and changing demographics.",
+  "filter": {
+   "chapter": 4
+  },
+  "filter_context": "User is studying labor supply in Chapter 4; filter given before retrieval."
+ },
+ {
+  "id": "q40",
+  "split": "dev",
+  "type": "metadata_filter",
+  "question": "Which kinds of goods have inelastic demand and which are more price-sensitive?",
+  "expected_answer": "Necessities such as housing and electricity are inelastic; non-necessities such as restaurant meals are more price-sensitive.",
+  "gold_source_id": "openstax-econ2e",
+  "gold_pages": [
+   126
+  ],
+  "evidence_quote": "Note that demand for necessities such as housing and electricity is inelastic, while items that are not necessities such as restaurant meals are more price-sensitive.",
+  "filter": {
+   "chapter": 5
+  },
+  "filter_context": "User is studying Chapter 5 (elasticity); filter given before retrieval."
+ }
+]

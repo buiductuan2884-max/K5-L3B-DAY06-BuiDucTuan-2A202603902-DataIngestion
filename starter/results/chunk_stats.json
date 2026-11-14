@@ -1,0 +1,20 @@
+{
+ "A": {
+  "count": 449,
+  "min_chars": 54,
+  "median_chars": 500,
+  "mean_chars": 468.3,
+  "max_chars": 500,
+  "total_chars": 210266,
+  "total_tokens_cl100k": 44289
+ },
+ "B": {
+  "count": 260,
+  "min_chars": 148,
+  "median_chars": 784.5,
+  "mean_chars": 737.5,
+  "max_chars": 1000,
+  "total_chars": 191739,
+  "total_tokens_cl100k": 40233
+ }
+}

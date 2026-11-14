@@ -1,0 +1,7 @@
+﻿strategy,split,hit1,hit3,evidence_split
+A,dev,11/29,12/29,13
+A,test,8/11,9/11,1
+B,dev,16/29,20/29,3
+B,test,6/11,9/11,1
+C,dev,16/29,20/29,3
+C,test,6/11,10/11,0

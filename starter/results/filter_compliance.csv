@@ -1,0 +1,22 @@
+﻿strategy,question_id,split,filter,top3_all_match
+A,q14,dev,"{""chapter"": 4}",True
+B,q14,dev,"{""chapter"": 4}",False
+C,q14,dev,"{""chapter"": 4}",True
+A,q15,dev,"{""chapter"": 3}",False
+B,q15,dev,"{""chapter"": 3}",False
+C,q15,dev,"{""chapter"": 3}",True
+A,t18,test,"{""chapter"": 4}",False
+B,t18,test,"{""chapter"": 4}",False
+C,t18,test,"{""chapter"": 4}",True
+A,q29,dev,"{""chapter"": 4}",False
+B,q29,dev,"{""chapter"": 4}",False
+C,q29,dev,"{""chapter"": 4}",True
+A,t30,test,"{""chapter"": 5}",True
+B,t30,test,"{""chapter"": 5}",False
+C,t30,test,"{""chapter"": 5}",True
+A,t39,test,"{""chapter"": 4}",True
+B,t39,test,"{""chapter"": 4}",True
+C,t39,test,"{""chapter"": 4}",True
+A,q40,dev,"{""chapter"": 5}",True
+B,q40,dev,"{""chapter"": 5}",True
+C,q40,dev,"{""chapter"": 5}",True

@@ -1,4 +1,7 @@
-# Core setup and PDF parsing. Choose and install an embedding SDK separately.
-psycopg[binary]==3.3.8
-pypdf>=5,<7
+# Core setup and PDF parsing, embeddings (OpenAI) and vector store (Chroma).
+pymupdf==2.1
+chromadb==1.5.9
+openai==3.51.0
+tiktoken==0.14.0
 python-dotenv>=1,<2
+streamlit==1.67.0

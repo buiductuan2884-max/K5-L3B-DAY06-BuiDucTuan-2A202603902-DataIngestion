@@ -1,0 +1,54 @@
+[
+ {
+  "timestamp": "2026-11-14T02:34:28.542240+00:00",
+  "model": "text-embedding-3-small",
+  "strategies": {
+   "A": {
+    "seconds": 6.05,
+    "embedding_tokens": 44289,
+    "est_cost_usd": 0.00088578,
+    "upsert": {
+     "before": 0,
+     "after": 449,
+     "deleted": 0
+    }
+   },
+   "B": {
+    "seconds": 2.14,
+    "embedding_tokens": 40233,
+    "est_cost_usd": 0.00080466,
+    "upsert": {
+     "before": 0,
+     "after": 260,
+     "deleted": 0
+    }
+   }
+  }
+ },
+ {
+  "timestamp": "2026-11-14T02:34:46.402568+00:00",
+  "model": "text-embedding-3-small",
+  "strategies": {
+   "A": {
+    "seconds": 4.19,
+    "embedding_tokens": 44289,
+    "est_cost_usd": 0.00088578,
+    "upsert": {
+     "before": 449,
+     "after": 449,
+     "deleted": 0
+    }
+   },
+   "B": {
+    "seconds": 2.38,
+    "embedding_tokens": 40233,
+    "est_cost_usd": 0.00080466,
+    "upsert": {
+     "before": 260,
+     "after": 260,
+     "deleted": 0
+    }
+   }
+  }
+ }
+]
