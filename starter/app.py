@@ -74,6 +74,40 @@ def hist(lens: list[int]):
                                      "y": {"field": "count", "type": "quantitative"}}}, width="stretch")
 
 
+PDF = HERE / "data" / "Economics2e.pdf"
+PDF_URL = "https://assets.openstax.org/oscms-prodcms/media/documents/Economics2e-OP_s2jF42u.pdf"
+
+
+def _phrases(text):  # từng câu của chunk; tìm trên PDF theo cả câu, hỏng thì lùi về 45 ký tự đầu
+    return [s.strip() for s in text.replace("\n", " ").split(". ") if len(s.strip()) >= 25]
+
+
+@st.cache_data(max_entries=64)
+def page_png(page: int, chunk_text: str, evidence: str = "") -> bytes:
+    """Ảnh trang sách gốc, tô vàng phần chunk, tô xanh evidence (nếu có câu benchmark)."""
+    import fitz
+    with fitz.open(PDF) as doc:
+        p = doc[page - 1]
+        for phrases, color in ((_phrases(chunk_text), (1, 0.85, 0)), (_phrases(evidence), (0.3, 0.9, 0.4))):
+            for ph in phrases:
+                for r in p.search_for(ph) or p.search_for(ph[:45]):
+                    a = p.add_highlight_annot(r)
+                    a.set_colors(stroke=color)
+                    a.update()
+        return p.get_pixmap(matrix=fitz.Matrix(1.6, 1.6)).tobytes("png")
+
+
+def book_page(h, q, key):
+    if not st.toggle(f"Xem trang sách gốc (tr. {h['page']})", key=key):
+        return
+    st.markdown(f"[Mở PDF gốc ở trang {h['page']}]({PDF_URL}#page={h['page']})")
+    if not PDF.exists():
+        st.info("Chưa có file PDF trên máy này; dùng link ở trên để mở trang gốc.")
+        return
+    for pg in range(h["page"], h["page_end"] + 1):
+        st.image(page_png(pg, h["text"], q["evidence_quote"] if q else ""), caption=f"Trang PDF {pg}")
+
+
 def cards(hits, q=None, key=""):
     """hits: [{rank?, score, page, page_end, chapter, section, text, chunk_id}]; q: câu benchmark để đánh dấu."""
     for i, h in enumerate(hits, 1):
@@ -85,6 +119,7 @@ def cards(hits, q=None, key=""):
             if len(h["text"]) > 300:
                 with st.expander("Toàn văn"):
                     st.text(h["text"])
+            book_page(h, q, f"pg-{key}-{i}")
 
 
 def from_store(res, q):
@@ -199,7 +234,7 @@ with tab2:
                 st.subheader(titles[k])
                 if k == "C" and not st.session_state.res_where:
                     st.caption("C = B không lọc")
-                cards(st.session_state.res[k], st.session_state.res_q)
+                cards(st.session_state.res[k], st.session_state.res_q, key=f"ask-{k}")
 
 with tab3:
     traces = {s: {t["id"]: t for t in load_jsonl(str(R / f"traces_{s}.jsonl"))} for s in "ABC"}
@@ -246,7 +281,7 @@ with tab3:
             st.subheader(k)
             if t["evidence_split_flag"]:
                 st.warning("evidence split")
-            cards([{**h, "hit": h["is_hit"]} for h in t["top3"]], q)
+            cards([{**h, "hit": h["is_hit"]} for h in t["top3"]], q, key=f"bench-{qid}-{k}")
 
 with tab4:
     cm = os.getenv("CHAT_MODEL") or "gpt-4o-mini"
